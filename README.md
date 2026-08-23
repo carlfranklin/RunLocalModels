@@ -2,6 +2,8 @@
 
 This guide documents a working setup for running **Qwen3.8-27B locally with llama.cpp** on a Windows NVIDIA machine and using it remotely from **GitHub Copilot CLI** on a development PC.
 
+> Llama.cpp can take advantage of both VRAM and system RAM to provide a much bigger context than VRAM alone can provide.
+
 The tested machine uses an **NVIDIA RTX 5090 with 32 GB VRAM**. Other NVIDIA GPUs can work, but quantization, context size, and speed may need adjustment.
 
 ## 1. Architecture
@@ -509,4 +511,3 @@ copilot
 -   GitHub Copilot CLI BYOK documentation:
     https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models
 -   Manual Compaction Instructions: https://github.com/carlfranklin/manualcompaction
-
