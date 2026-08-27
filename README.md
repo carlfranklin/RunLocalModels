@@ -1,5 +1,7 @@
 # Running Qwen3.8-27B with llama.cpp and GitHub Copilot CLI on Windows
 
+I have been waiting for a local LLM to run well on my AI computer and I finally nailed it. No bonks. No hallucinations. Seamless integration with my local dev machine. This is what I've been waiting for.
+
 This guide documents a working setup for running **Qwen3.8-27B locally with llama.cpp** on a Windows NVIDIA machine and using it remotely from **GitHub Copilot CLI** on a development PC.
 
 > Llama.cpp can take advantage of both VRAM and system RAM to provide a much bigger context than VRAM alone can provide.
