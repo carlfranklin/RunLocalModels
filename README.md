@@ -152,6 +152,8 @@ Meaning:
 
 The first launch downloads the model. Later launches use the cached copy.
 
+Why disable the caches? During extended testing, llama.cpp was observed to become progressively slower after remaining running across many Copilot CLI sessions—even when a new session was using relatively little context. Restarting llama.cpp immediately restored full performance. The three cache options above disable persistent prompt/KV/idle-slot reuse to determine whether accumulated server-side cache state is responsible for the slowdown.
+
 ## 5. Verify the server
 
 Wait until llama-server reports that the model is loaded and listening.
