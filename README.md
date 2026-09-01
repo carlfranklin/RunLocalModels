@@ -123,9 +123,6 @@ cd C:\llama.cpp
   -hf ggml-org/Qwen3.8-27B-GGUF:Q4_K_M `
   -c 131072 `
   -np 1 `
-  --cache-ram 0 `
-  --cache-reuse 0 `
-  --no-cache-idle-slots `
   --jinja `
   -fa on `
   --host 0.0.0.0 `
@@ -140,19 +137,11 @@ Meaning:
 | `-hf ...`               | Downloads/loads the GGUF model from Hugging Face                                                       |
 | `-c 131072`             | Sets the context window to 128K tokens                                                                 |
 | `-np 1`                 | Uses one concurrent context/inference slot                                                             |
-| `--cache-ram 0`         | Disables llama.cpp's RAM-based prompt cache, preventing cached prompts from persisting across sessions |
-| `--cache-reuse 0`       | Disables KV-cache prefix reuse between requests                                                        |
-| `--no-cache-idle-slots` | Prevents idle context slots from being saved into the prompt cache for later reuse                     |
 | `--jinja`               | Enables Jinja chat templates needed for proper chat/tool formatting                                    |
 | `-fa on`                | Enables Flash Attention for faster, more memory-efficient attention processing                         |
 | `--host 0.0.0.0`        | Listens on all network interfaces so other LAN machines can connect                                    |
 | `--port 8080`           | Runs the OpenAI-compatible API server on TCP port 8080                                                 |
 | `--alias qwen38-27b`    | Exposes a simple model ID (`qwen38-27b`) to API clients                                                |
-
-
-The first launch downloads the model. Later launches use the cached copy.
-
-Why disable the caches? During extended testing, llama.cpp was observed to become progressively slower after remaining running across many Copilot CLI sessions—even when a new session was using relatively little context. Restarting llama.cpp immediately restored full performance. The three cache options above disable persistent prompt/KV/idle-slot reuse to determine whether accumulated server-side cache state is responsible for the slowdown.
 
 ## 5. Verify the server
 
