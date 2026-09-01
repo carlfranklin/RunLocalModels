@@ -113,15 +113,7 @@ The model used here is:
 ``` text
 ggml-org/Qwen3.8-27B-GGUF:Q4_K_M
 ```
-As of this writing there is a bug with llama.cpp and Qwen 3.8 that causes it to bonk after a certain amount of usage https://github.com/ggml-org/llama.cpp/issues/27329. To mitigate this enter this PowerShell command to set a persistent environment variable once on the Windows machine. 
-
-``` powershell
-[Environment]::SetEnvironmentVariable(
-    "GGML_CUDA_DISABLE_GRAPHS",
-    "1",
-    "User"
-)
-```
+Note: As of this writing there is a bug with llama.cpp and Qwen 3.8 that causes it to bonk after a certain amount of usage https://github.com/ggml-org/llama.cpp/issues/27329. You may have to restart llama.cpp on a regular basis.
 
 Start Llama.cpp with:
 
