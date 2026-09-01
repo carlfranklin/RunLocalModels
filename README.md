@@ -113,7 +113,7 @@ The model used here is:
 ``` text
 ggml-org/Qwen3.8-27B-GGUF:Q4_K_M
 ```
-As of this writing there is a bug with llama.cpp and Qwen 3.8 that causes it to bonk after a certain amount of usage. To mitigate this enter this PowerShell command to set a persistent environment variable once on the Windows machine. 
+As of this writing there is a bug with llama.cpp and Qwen 3.8 that causes it to bonk after a certain amount of usage https://github.com/ggml-org/llama.cpp/issues/27329. To mitigate this enter this PowerShell command to set a persistent environment variable once on the Windows machine. 
 
 ``` powershell
 [Environment]::SetEnvironmentVariable(
